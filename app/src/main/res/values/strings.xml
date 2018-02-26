@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">PhoneBook</string>
+    <string name="list_of_contacts">List of contacts</string>
+    <string name="hint_contact_name">Enter contact name</string>
+    <string name="hint_contact_number">Enter contact number</string>
+    <string name="hint_contact_address">Enter contact adress</string>
+    <string name="toolbar_add_new_contact">Add new contact</string>
+    <string name="button_gallery">Gallery</string>
+    <string name="button_camera">Camera</string>
+    <string name="add_contact">Add contact</string>
+    <string name="save_contact">Save Contact</string>
+    <string name="edit_contact">Edit contact</string>
+</resources>

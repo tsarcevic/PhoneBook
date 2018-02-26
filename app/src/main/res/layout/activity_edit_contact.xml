@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.comp.phonebook.ui.add_new_contact.AddNewContact">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/colorBlue">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/edit_contact"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            android:padding="16dp"
+            android:src="@drawable/ic_back_arrow" />
+
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/add_person_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:drawableEnd="@drawable/ic_name"
+        android:hint="@string/hint_contact_name"
+        android:theme="@style/EditTextStyle" />
+
+    <EditText
+        android:id="@+id/add_person_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:drawableEnd="@drawable/ic_phone"
+        android:hint="@string/hint_contact_number"
+        android:inputType="phone"
+        android:theme="@style/EditTextStyle" />
+
+    <EditText
+        android:id="@+id/add_person_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:drawableEnd="@drawable/ic_address"
+        android:hint="@string/hint_contact_address"
+        android:theme="@style/EditTextStyle" />
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/add_person_photo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        app:civ_border_color="@color/colorWhite"
+        app:civ_border_width="2dp"
+        tools:src="@drawable/ic_name"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@color/colorBlue"
+            android:text="@string/button_gallery"
+            android:textColor="@color/colorWhite" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@color/colorBlue"
+            android:text="@string/button_camera"
+            android:textColor="@color/colorWhite" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorBlue"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:text="@string/save_contact"
+        android:textColor="@color/colorWhite" />
+
+</LinearLayout>
