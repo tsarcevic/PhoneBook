@@ -31,7 +31,7 @@
     </FrameLayout>
 
     <EditText
-        android:id="@+id/add_person_name"
+        android:id="@+id/add_contact_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -42,7 +42,7 @@
         android:theme="@style/EditTextStyle" />
 
     <EditText
-        android:id="@+id/add_person_phone"
+        android:id="@+id/add_contact_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -54,7 +54,7 @@
         android:theme="@style/EditTextStyle" />
 
     <EditText
-        android:id="@+id/add_person_address"
+        android:id="@+id/add_contact_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -65,7 +65,7 @@
         android:theme="@style/EditTextStyle" />
 
     <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/add_person_photo"
+        android:id="@+id/add_contact_photo"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_gravity="center"

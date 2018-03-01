@@ -10,4 +10,8 @@
     <string name="add_contact">Add contact</string>
     <string name="save_contact">Save Contact</string>
     <string name="edit_contact">Edit contact</string>
+    <string name="no_data_to_show">No data to show!</string>
+    <string name="edit_text_error">You left empty field!</string>
+    <string name="contact_picture_error">You haven\'t picked contact picture!</string>
+    <string name="contact_info_error">Something went horribly wrong</string>
 </resources>

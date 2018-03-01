@@ -5,4 +5,15 @@ package com.example.comp.phonebook.ui.edit_contact;
  */
 
 public interface EditContactInterface {
+
+    interface View {
+
+    }
+
+    interface Presenter {
+
+        void setView(View view);
+
+        void viewReady();
+    }
 }

@@ -53,6 +53,10 @@ public class DatabaseHelper {
         return realm.copyFromRealm(realm.where(Contact.class).findAll());
     }
 
+    public Contact getContact(int id) {
+        return realm.copyFromRealm(realm.where(Contact.class).equalTo("id", id).findFirst());
+    }
+
     public void deleteContact(int id) {
         if (id != 0) {
             realm.beginTransaction();

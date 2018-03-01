@@ -1,51 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/person_image"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/contact_image"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:civ_border_color="@color/colorWhite"
+        app:civ_border_width="2dp" />
 
     <TextView
-        android:id="@+id/person_name"
+        android:textColor="@color/colorBlue"
+        android:id="@+id/contact_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_toEndOf="@id/person_image"
+        android:layout_toEndOf="@id/contact_image"
         android:drawableStart="@drawable/ic_name"
         android:gravity="center"
         tools:text="Ime" />
 
     <TextView
-        android:id="@+id/person_number"
+        android:textColor="@color/colorBlue"
+        android:id="@+id/contact_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/person_name"
+        android:layout_below="@id/contact_name"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_toEndOf="@id/person_image"
+        android:layout_toEndOf="@id/contact_image"
         android:drawableStart="@drawable/ic_phone"
         android:gravity="center"
         tools:text="Broj" />
 
     <TextView
-        android:id="@+id/person_adress"
+        android:textColor="@color/colorBlue"
+        android:id="@+id/contact_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/person_number"
+        android:layout_below="@id/contact_number"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_toEndOf="@id/person_image"
+        android:layout_toEndOf="@id/contact_image"
         android:drawableStart="@drawable/ic_address"
         android:gravity="center"
         tools:text="Adresa" />

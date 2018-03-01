@@ -8,6 +8,7 @@
     <uses-permission android:name="android.hardware.camera" />
 
     <application
+        android:name=".utils.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,12 +17,6 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ui.contact_list.ContactList"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.edit_contact.EditContact"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.add_new_contact.AddNewContact"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,6 +24,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.edit_contact.EditContact"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.add_new_contact.AddNewContact"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.contact_info.ContactInfo"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
