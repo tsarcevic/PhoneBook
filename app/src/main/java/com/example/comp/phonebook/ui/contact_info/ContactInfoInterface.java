@@ -19,6 +19,16 @@ public interface ContactInfoInterface {
         void showContactNumber(String phoneNumber);
 
         void showContactAddress(String address);
+
+        void navigateToContactCall(String phoneNumber);
+
+        void navigateToEditContactScreen(int id);
+
+        void navigateToPreviousScreen();
+
+        void showDeleteDialog(int id);
+
+        void navigateToMessageSend(String phoneNumber);
     }
 
     interface Presenter {
@@ -26,5 +36,15 @@ public interface ContactInfoInterface {
         void setView(View view);
 
         void sendContactId(int intExtra);
+
+        void onContactNumberClicked();
+
+        void onDeleteClicked();
+
+        void onEditClicked();
+
+        void onBackClicked();
+
+        void onMessageClicked();
     }
 }

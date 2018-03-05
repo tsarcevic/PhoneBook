@@ -15,6 +15,8 @@ public class ContactInfoPresenter implements ContactInfoInterface.Presenter {
 
     private DatabaseInterface databaseInterface;
 
+    Contact contact;
+
     public ContactInfoPresenter(DatabaseInterface databaseInterface) {
         this.databaseInterface = databaseInterface;
     }
@@ -34,7 +36,7 @@ public class ContactInfoPresenter implements ContactInfoInterface.Presenter {
     }
 
     private void getContactInfo(int intExtra) {
-        Contact contact = databaseInterface.getContactInfo(intExtra);
+        contact = databaseInterface.getContactInfo(intExtra);
 
         if (contact != null) {
             view.showContactPhoto(ImageUtils.convertByteToBitmapPicture(contact.getPicture()));
@@ -44,5 +46,30 @@ public class ContactInfoPresenter implements ContactInfoInterface.Presenter {
         } else {
             view.showNoDataInfo();
         }
+    }
+
+    @Override
+    public void onContactNumberClicked() {
+        view.navigateToContactCall(contact.getPhoneNumber());
+    }
+
+    @Override
+    public void onMessageClicked() {
+        view.navigateToMessageSend(contact.getPhoneNumber());
+    }
+
+    @Override
+    public void onDeleteClicked() {
+        view.showDeleteDialog(contact.getId());
+    }
+
+    @Override
+    public void onEditClicked() {
+        view.navigateToEditContactScreen(contact.getId());
+    }
+
+    @Override
+    public void onBackClicked() {
+        view.navigateToPreviousScreen();
     }
 }

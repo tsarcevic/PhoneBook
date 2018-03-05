@@ -3,6 +3,7 @@ package com.example.comp.phonebook.ui.contact_info;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
@@ -12,9 +13,11 @@ import android.widget.Toast;
 import com.example.comp.phonebook.R;
 import com.example.comp.phonebook.database.DatabaseManager;
 import com.example.comp.phonebook.presenters.ContactInfoPresenter;
+import com.example.comp.phonebook.ui.edit_contact.EditContact;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class ContactInfo extends AppCompatActivity implements ContactInfoInterface.View {
 
@@ -82,16 +85,69 @@ public class ContactInfo extends AppCompatActivity implements ContactInfoInterfa
 
     @Override
     public void showContactName(String name) {
-        contactName.setText(name);
+        contactName.setText(String.format(getString(R.string.show_contact_name), name));
     }
 
     @Override
     public void showContactNumber(String phoneNumber) {
-        contactNumber.setText(phoneNumber);
+        contactNumber.setText(String.format(getString(R.string.show_contact_number), phoneNumber));
     }
 
     @Override
     public void showContactAddress(String address) {
-        contactAddress.setText(address);
+        contactAddress.setText(String.format(getString(R.string.show_contact_address), address));
+    }
+
+    @OnClick(R.id.contact_info_number)
+    public void onContactNumberClicked() {
+        presenter.onContactNumberClicked();
+    }
+
+    @OnClick(R.id.contact_info_back_button)
+    public void onBackClicked() {
+        presenter.onBackClicked();
+    }
+
+    @OnClick(R.id.contact_info_edit_button)
+    public void onEditClicked() {
+        presenter.onEditClicked();
+    }
+
+    @OnClick(R.id.contact_info_delete_button)
+    public void onDeleteClicked() {
+        presenter.onDeleteClicked();
+    }
+
+    @OnClick(R.id.contact_info_message_send)
+    public void onMessageClicked() {
+        presenter.onMessageClicked();
+    }
+
+    @Override
+    public void navigateToContactCall(String phoneNumber) {
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:" + phoneNumber));
+
+        startActivity(intent);
+    }
+
+    @Override
+    public void navigateToMessageSend(String phoneNumber) {
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + phoneNumber)));
+    }
+
+    @Override
+    public void navigateToEditContactScreen(int id) {
+        startActivity(EditContact.getLaunchIntent(this, id));
+    }
+
+    @Override
+    public void navigateToPreviousScreen() {
+        finish();
+    }
+
+    @Override
+    public void showDeleteDialog(int id) {
+
     }
 }

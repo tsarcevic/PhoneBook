@@ -73,6 +73,15 @@
         android:textColor="@color/colorBlue"
         tools:text="Contact number" />
 
+    <ImageView
+        android:id="@+id/contact_info_message_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contact_info_name"
+        android:layout_toEndOf="@id/contact_info_number"
+        android:padding="8dp"
+        android:src="@drawable/ic_message" />
+
     <TextView
         android:id="@+id/contact_info_address"
         android:layout_width="wrap_content"

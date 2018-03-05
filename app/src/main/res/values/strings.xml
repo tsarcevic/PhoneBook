@@ -14,4 +14,7 @@
     <string name="edit_text_error">You left empty field!</string>
     <string name="contact_picture_error">You haven\'t picked contact picture!</string>
     <string name="contact_info_error">Something went horribly wrong</string>
+    <string name="show_contact_name">Contact name: %s</string>
+    <string name="show_contact_number">Contact number: %s</string>
+    <string name="show_contact_address">Contact address: %s</string>
 </resources>
