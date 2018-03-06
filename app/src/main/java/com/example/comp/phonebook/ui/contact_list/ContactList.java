@@ -6,15 +6,18 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.comp.phonebook.R;
 import com.example.comp.phonebook.data.Contact;
 import com.example.comp.phonebook.database.DatabaseManager;
 import com.example.comp.phonebook.interfaces.ContactClickListener;
+import com.example.comp.phonebook.interfaces.DeleteListener;
 import com.example.comp.phonebook.presenters.ContactListPresenter;
 import com.example.comp.phonebook.ui.add_new_contact.AddNewContact;
 import com.example.comp.phonebook.ui.contact_info.ContactInfo;
 import com.example.comp.phonebook.ui.contact_list.adapters.ContactListAdapter;
+import com.example.comp.phonebook.utils.DialogUtils;
 
 import java.util.List;
 
@@ -22,7 +25,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ContactList extends AppCompatActivity implements ContactClickListener, ContactListInterface.View {
+public class ContactList extends AppCompatActivity implements ContactClickListener, ContactListInterface.View, DeleteListener {
 
     @BindView(R.id.recycler_person)
     RecyclerView contactListRecycler;
@@ -45,8 +48,6 @@ public class ContactList extends AppCompatActivity implements ContactClickListen
 
         presenter.setView(this);
     }
-
-    // TODO: 28.2.2018. onLongClick metoda
 
     @Override
     protected void onResume() {
@@ -83,12 +84,27 @@ public class ContactList extends AppCompatActivity implements ContactClickListen
 
     @Override
     public void onContactLongClicked(int id) {
+        presenter.onContactLongClicked(id);
+    }
 
+    @Override
+    public void onDeleteClicked(int id) {
+        presenter.onDeleteContactClicked(id);
     }
 
     @Override
     public void navigateToContactInfo(int id) {
         startActivity(ContactInfo.getLaunchIntent(this, id));
+    }
+
+    @Override
+    public void showDeleteContactMessage() {
+        Toast.makeText(this, R.string.delete_contact_message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showDeleteDialog(int id) {
+        DialogUtils.showDialog(id, this, this);
     }
 
     @Override

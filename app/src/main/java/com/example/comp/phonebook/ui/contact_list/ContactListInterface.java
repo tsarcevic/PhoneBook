@@ -25,6 +25,10 @@ public interface ContactListInterface {
         void navigateToContactAdding();
 
         void navigateToContactInfo(int id);
+
+        void showDeleteDialog(int id);
+
+        void showDeleteContactMessage();
     }
 
     interface Presenter {
@@ -36,5 +40,9 @@ public interface ContactListInterface {
         void onAddButtonClicked();
 
         void onContactClicked(int id);
+
+        void onContactLongClicked(int id);
+
+        void onDeleteContactClicked(int id);
     }
 }

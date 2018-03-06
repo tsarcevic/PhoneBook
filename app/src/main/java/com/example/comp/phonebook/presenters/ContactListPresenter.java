@@ -57,4 +57,17 @@ public class ContactListPresenter implements ContactListInterface.Presenter {
     public void onContactClicked(int id) {
         view.navigateToContactInfo(id);
     }
+
+    @Override
+    public void onContactLongClicked(int id) {
+        view.showDeleteDialog(id);
+    }
+
+    @Override
+    public void onDeleteContactClicked(int id) {
+        databaseInterface.deleteContact(id);
+
+        view.showDeleteContactMessage();
+        fetchData();
+    }
 }

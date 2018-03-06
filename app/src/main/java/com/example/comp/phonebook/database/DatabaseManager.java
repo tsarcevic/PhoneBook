@@ -39,4 +39,9 @@ public class DatabaseManager implements DatabaseInterface {
     public Contact getContactInfo(int intExtra) {
         return dbHelper.getContact(intExtra);
     }
+
+    @Override
+    public void deleteContact(int id) {
+        dbHelper.deleteContact(id);
+    }
 }

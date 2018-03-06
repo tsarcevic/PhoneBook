@@ -12,14 +12,16 @@ import android.widget.Toast;
 
 import com.example.comp.phonebook.R;
 import com.example.comp.phonebook.database.DatabaseManager;
+import com.example.comp.phonebook.interfaces.DeleteListener;
 import com.example.comp.phonebook.presenters.ContactInfoPresenter;
 import com.example.comp.phonebook.ui.edit_contact.EditContact;
+import com.example.comp.phonebook.utils.DialogUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ContactInfo extends AppCompatActivity implements ContactInfoInterface.View {
+public class ContactInfo extends AppCompatActivity implements ContactInfoInterface.View, DeleteListener {
 
     @BindView(R.id.info_contact_image)
     ImageView contactImage;
@@ -148,6 +150,16 @@ public class ContactInfo extends AppCompatActivity implements ContactInfoInterfa
 
     @Override
     public void showDeleteDialog(int id) {
+        DialogUtils.showDialog(id, this, this);
+    }
 
+    @Override
+    public void onDeleteClicked(int id) {
+        presenter.onDialogDeleteClicked(id);
+    }
+
+    @Override
+    public void showDeletedContactMessage() {
+        Toast.makeText(getApplicationContext(), R.string.delete_contact_message, Toast.LENGTH_SHORT).show();
     }
 }

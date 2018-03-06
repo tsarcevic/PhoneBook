@@ -80,6 +80,7 @@
         android:layout_below="@id/contact_info_name"
         android:layout_toEndOf="@id/contact_info_number"
         android:padding="8dp"
+        android:layout_marginEnd="16dp"
         android:src="@drawable/ic_message" />
 
     <TextView

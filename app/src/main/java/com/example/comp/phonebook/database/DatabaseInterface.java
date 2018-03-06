@@ -15,4 +15,6 @@ public interface DatabaseInterface {
     void addContact(String name, String number, String address, byte[] photo);
 
     Contact getContactInfo(int intExtra);
+
+    void deleteContact(int id);
 }

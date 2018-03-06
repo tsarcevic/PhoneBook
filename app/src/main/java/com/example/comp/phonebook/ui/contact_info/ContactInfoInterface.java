@@ -29,6 +29,8 @@ public interface ContactInfoInterface {
         void showDeleteDialog(int id);
 
         void navigateToMessageSend(String phoneNumber);
+
+        void showDeletedContactMessage();
     }
 
     interface Presenter {
@@ -46,5 +48,7 @@ public interface ContactInfoInterface {
         void onBackClicked();
 
         void onMessageClicked();
+
+        void onDialogDeleteClicked(int id);
     }
 }

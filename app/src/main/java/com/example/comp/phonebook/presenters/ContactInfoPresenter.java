@@ -72,4 +72,12 @@ public class ContactInfoPresenter implements ContactInfoInterface.Presenter {
     public void onBackClicked() {
         view.navigateToPreviousScreen();
     }
+
+    @Override
+    public void onDialogDeleteClicked(int id) {
+        databaseInterface.deleteContact(id);
+
+        view.showDeletedContactMessage();
+        view.navigateToPreviousScreen();
+    }
 }

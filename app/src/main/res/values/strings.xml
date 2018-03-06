@@ -17,4 +17,8 @@
     <string name="show_contact_name">Contact name: %s</string>
     <string name="show_contact_number">Contact number: %s</string>
     <string name="show_contact_address">Contact address: %s</string>
+    <string name="contact_info_dialog_message">Do you really want to delete this entry?</string>
+    <string name="contact_info_dialog_positive">Yes</string>
+    <string name="contact_info_dialog_negative">No</string>
+    <string name="delete_contact_message">You successfully deleted contact</string>
 </resources>
