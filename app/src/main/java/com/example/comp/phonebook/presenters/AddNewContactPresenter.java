@@ -39,6 +39,7 @@ public class AddNewContactPresenter implements AddNewContactInterface.Presenter 
     @Override
     public void addContactClicked(String name, String number, String address, Drawable photo) {
         boolean isEmpty = false;
+
         if (!StringUtils.checkIfStringIsNotEmpty(name)) {
             view.contactNameError();
             isEmpty = true;

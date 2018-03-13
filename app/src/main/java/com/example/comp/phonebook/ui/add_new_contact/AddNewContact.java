@@ -138,4 +138,6 @@ public class AddNewContact extends AppCompatActivity implements AddNewContactInt
     public void showImageBox() {
         contactPhoto.setVisibility(View.VISIBLE);
     }
+
+
 }

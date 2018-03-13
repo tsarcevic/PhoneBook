@@ -44,4 +44,9 @@ public class DatabaseManager implements DatabaseInterface {
     public void deleteContact(int id) {
         dbHelper.deleteContact(id);
     }
+
+    @Override
+    public void updateContact(String name, String number, String address, byte[] bytePhoto) {
+        dbHelper.updateContact(new Contact(name, number, bytePhoto, address));
+    }
 }

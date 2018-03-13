@@ -84,4 +84,14 @@ public class DatabaseHelper {
 
         return contactList;
     }
+
+    public void updateContact(Contact contact) {
+        if (contact != null) {
+            realm.beginTransaction();
+
+            realm.copyToRealmOrUpdate(contact);
+
+            realm.commitTransaction();
+        }
+    }
 }

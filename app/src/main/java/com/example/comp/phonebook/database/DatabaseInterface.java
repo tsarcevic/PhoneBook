@@ -17,4 +17,6 @@ public interface DatabaseInterface {
     Contact getContactInfo(int intExtra);
 
     void deleteContact(int id);
+
+    void updateContact(String name, String number, String address, byte[] bytePhoto);
 }

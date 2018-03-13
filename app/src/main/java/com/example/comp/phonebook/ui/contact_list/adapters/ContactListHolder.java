@@ -32,12 +32,6 @@ public class ContactListHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.contact_name)
     TextView contactName;
 
-    @BindView(R.id.contact_number)
-    TextView contactNumber;
-
-    @BindView(R.id.contact_address)
-    TextView contactAddress;
-
     @BindColor(R.color.colorWhite)
     int whiteColor;
 
@@ -80,8 +74,6 @@ public class ContactListHolder extends RecyclerView.ViewHolder {
 
             ImageUtils.setPicture(contactImage, contact.getPicture());
             contactName.setText(contact.getName());
-            contactNumber.setText(contact.getPhoneNumber());
-            contactAddress.setText(contact.getAddress());
         }
 
     }

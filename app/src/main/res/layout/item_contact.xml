@@ -17,6 +17,7 @@
         app:civ_border_width="2dp" />
 
     <TextView
+        android:layout_centerVertical="true"
         android:textColor="@color/colorBlue"
         android:id="@+id/contact_name"
         android:layout_width="match_parent"
@@ -28,34 +29,5 @@
         android:drawableStart="@drawable/ic_name"
         android:gravity="center"
         tools:text="Ime" />
-
-    <TextView
-        android:textColor="@color/colorBlue"
-        android:id="@+id/contact_number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/contact_name"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_toEndOf="@id/contact_image"
-        android:drawableStart="@drawable/ic_phone"
-        android:gravity="center"
-        tools:text="Broj" />
-
-    <TextView
-        android:textColor="@color/colorBlue"
-        android:id="@+id/contact_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/contact_number"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_toEndOf="@id/contact_image"
-        android:drawableStart="@drawable/ic_address"
-        android:gravity="center"
-        tools:text="Adresa" />
 
 </RelativeLayout>
