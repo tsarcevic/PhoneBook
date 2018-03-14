@@ -41,22 +41,22 @@ public class AddNewContactPresenter implements AddNewContactInterface.Presenter 
         boolean isEmpty = false;
 
         if (!StringUtils.checkIfStringIsNotEmpty(name)) {
-            view.contactNameError();
+            view.showContactNameMissingError();
             isEmpty = true;
         }
 
         if (!StringUtils.checkIfStringIsNotEmpty(number)) {
-            view.contactNumberError();
+            view.showContactNumberMissingError();
             isEmpty = true;
         }
 
         if (!StringUtils.checkIfStringIsNotEmpty(address)) {
-            view.contactAddressError();
+            view.showContactAddressMissingError();
             isEmpty = true;
         }
 
         if (photo == null) {
-            view.contactPictureError();
+            view.showContactPictureMissingError();
             isEmpty = true;
         }
 
@@ -70,6 +70,23 @@ public class AddNewContactPresenter implements AddNewContactInterface.Presenter 
 
         databaseInterface.addContact(name, number, address, bytePhoto);
         view.articleAdded();
+    }
+
+    @Override
+    public void checkContactNumberInput(CharSequence number) {
+        if(number.length()<9 || number.length() > 20)
+        {
+            view.showContactNumberLengthError();
+            view.showContactNumberUnderlineError();
+        } else {
+            view.hideContactNumberError();
+            view.hideContactNumberUnderlineError();
+        }
+    }
+
+    @Override
+    public void onContactNumberLostFocus() {
+        view.showContactNumberUnderlineHintColor();
     }
 
     @Override

@@ -34,6 +34,16 @@ public interface EditContactInterface {
         void openCamera();
 
         void navigateBack();
+
+        void showContactNumberLengthError();
+
+        void showContactNumberUnderlineError();
+
+        void hideContactNumberError();
+
+        void hideContactNumberUnderlineError();
+
+        void showContactNumberUnderlineHintColor();
     }
 
     interface Presenter {
@@ -51,5 +61,9 @@ public interface EditContactInterface {
         void onBackClicked();
 
         void sendContactId(int id);
+
+        void checkContactNumberInput(CharSequence charSequence);
+
+        void onContactNumberLostFocus();
     }
 }

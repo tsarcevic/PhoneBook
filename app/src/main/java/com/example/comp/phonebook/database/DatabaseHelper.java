@@ -58,7 +58,7 @@ public class DatabaseHelper {
     }
 
     public void deleteContact(int id) {
-        if (id != 0) {
+        if (id >= 0) {
             realm.beginTransaction();
 
             Contact deletedContact = realm.where(Contact.class).equalTo("id", id).findFirst();

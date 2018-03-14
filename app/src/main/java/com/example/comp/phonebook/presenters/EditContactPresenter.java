@@ -90,6 +90,23 @@ public class EditContactPresenter implements EditContactInterface.Presenter {
     }
 
     @Override
+    public void checkContactNumberInput(CharSequence number) {
+        if(number.length()<9 || number.length() > 20)
+        {
+            view.showContactNumberLengthError();
+            view.showContactNumberUnderlineError();
+        } else {
+            view.hideContactNumberError();
+            view.hideContactNumberUnderlineError();
+        }
+    }
+
+    @Override
+    public void onContactNumberLostFocus() {
+        view.showContactNumberUnderlineHintColor();
+    }
+
+    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data, ContentResolver contentResolver) {
         Bitmap personPicture;
 

@@ -21,4 +21,5 @@
     <string name="contact_info_dialog_positive">Yes</string>
     <string name="contact_info_dialog_negative">No</string>
     <string name="delete_contact_message">You successfully deleted contact</string>
+    <string name="contact_number_lenght_error">Number has to be between 9 and 20 digits</string>
 </resources>

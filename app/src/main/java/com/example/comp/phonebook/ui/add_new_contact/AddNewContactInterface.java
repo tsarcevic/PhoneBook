@@ -13,13 +13,13 @@ public interface AddNewContactInterface {
 
     interface View {
 
-        void contactNameError();
+        void showContactNameMissingError();
 
-        void contactNumberError();
+        void showContactNumberMissingError();
 
-        void contactAddressError();
+        void showContactAddressMissingError();
 
-        void contactPictureError();
+        void showContactPictureMissingError();
 
         void navigateToPreviousScreen();
 
@@ -32,6 +32,16 @@ public interface AddNewContactInterface {
         void showContactPhoto(Bitmap personPicture);
 
         void showImageBox();
+
+        void showContactNumberLengthError();
+
+        void showContactNumberUnderlineError();
+
+        void hideContactNumberError();
+
+        void hideContactNumberUnderlineError();
+
+        void showContactNumberUnderlineHintColor();
     }
 
     interface Presenter {
@@ -49,5 +59,9 @@ public interface AddNewContactInterface {
         void onGalleryClicked();
 
         void onActivityResult(int requestCode, int resultCode, Intent data, ContentResolver contentResolver);
+
+        void checkContactNumberInput(CharSequence number);
+
+        void onContactNumberLostFocus();
     }
 }
